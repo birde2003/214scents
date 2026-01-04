@@ -3,23 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-gray-100;
   }
 }
 
@@ -30,15 +15,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-background-secondary;
+  background-color: #1A1A1A;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 rounded-lg;
+  background-color: rgba(212, 175, 55, 0.5);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/70;
+  background-color: rgba(212, 175, 55, 0.7);
 }
 
 /* Animations */

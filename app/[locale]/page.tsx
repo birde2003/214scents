@@ -1,11 +1,13 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import StorefrontLayout from '@/components/storefront/StorefrontLayout';
 
 export default function HomePage() {
   const t = useTranslations();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background-secondary to-background">
+    <StorefrontLayout>
+    <div className="bg-gradient-to-b from-background via-background-secondary to-background">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=1920')] bg-cover bg-center opacity-20"></div>
@@ -90,13 +92,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-background-tertiary py-12 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400 mb-4">{t('footer.tagline')}</p>
-          <p className="text-gray-500">{t('footer.copyright')}</p>
-        </div>
-      </footer>
     </div>
+    </StorefrontLayout>
   );
 }
