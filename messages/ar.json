@@ -1,0 +1,93 @@
+{
+  "common": {
+    "appName": "214 عطور",
+    "home": "الرئيسية",
+    "shop": "المتجر",
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "cart": "السلة",
+    "wishlist": "المفضلة",
+    "account": "الحساب",
+    "signIn": "تسجيل الدخول",
+    "signOut": "تسجيل الخروج",
+    "register": "تسجيل حساب",
+    "search": "بحث",
+    "menu": "القائمة",
+    "close": "إغلاق",
+    "loading": "جاري التحميل...",
+    "addToCart": "أضف إلى السلة",
+    "buyNow": "اشتر الآن",
+    "viewDetails": "عرض التفاصيل",
+    "readMore": "اقرأ المزيد",
+    "showMore": "عرض المزيد",
+    "showLess": "عرض أقل",
+    "currency": "العملة",
+    "language": "اللغة",
+    "theme": "المظهر"
+  },
+  "hero": {
+    "title": "اكتشف عطرك المميز",
+    "subtitle": "عطور فاخرة صُنعت للأفراد المميزين",
+    "cta": "استكشف المجموعة"
+  },
+  "products": {
+    "featured": "المنتجات المميزة",
+    "newArrivals": "وصل حديثاً",
+    "bestSellers": "الأكثر مبيعاً",
+    "allProducts": "جميع المنتجات",
+    "mensPerfumes": "عطور رجالية",
+    "womensPerfumes": "عطور نسائية",
+    "unisex": "للجنسين",
+    "giftSets": "مجموعات هدايا",
+    "filters": "التصفية",
+    "sortBy": "ترتيب حسب",
+    "priceRange": "نطاق السعر",
+    "concentration": "التركيز",
+    "scentNotes": "مكونات العطر",
+    "size": "الحجم",
+    "inStock": "متوفر",
+    "outOfStock": "غير متوفر",
+    "addToWishlist": "أضف للمفضلة",
+    "reviews": "التقييمات",
+    "rating": "التقييم"
+  },
+  "cart": {
+    "yourCart": "سلتك",
+    "emptyCart": "سلتك فارغة",
+    "continueShopping": "متابعة التسوق",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "tax": "الضريبة",
+    "total": "الإجمالي",
+    "checkout": "إتمام الشراء",
+    "remove": "إزالة",
+    "quantity": "الكمية",
+    "update": "تحديث"
+  },
+  "checkout": {
+    "title": "إتمام الطلب",
+    "shippingAddress": "عنوان الشحن",
+    "billingAddress": "عنوان الفاتورة",
+    "paymentMethod": "طريقة الدفع",
+    "orderSummary": "ملخص الطلب",
+    "placeOrder": "تأكيد الطلب",
+    "processing": "جاري المعالجة..."
+  },
+  "account": {
+    "myAccount": "حسابي",
+    "profile": "الملف الشخصي",
+    "orders": "الطلبات",
+    "addresses": "العناوين",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج"
+  },
+  "footer": {
+    "tagline": "عطور فاخرة للذواقين",
+    "quickLinks": "روابط سريعة",
+    "customerService": "خدمة العملاء",
+    "followUs": "تابعنا",
+    "newsletter": "اشترك في النشرة الإخبارية",
+    "subscribe": "اشترك",
+    "copyright": "© 2024 214 عطور. جميع الحقوق محفوظة."
+  }
+}
