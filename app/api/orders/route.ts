@@ -9,7 +9,33 @@ import { sendOrderConfirmationEmail } from '@/lib/email'
 export async function GET(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
+    const { searchParams } = new URL(request.url)
+    const orderNumber = searchParams.get('orderNumber')
 
+    // If orderNumber is provided, fetch specific order
+    if (orderNumber) {
+      const { getOrderByNumber } = await import('@/lib/order')
+      const order = await getOrderByNumber(orderNumber)
+      
+      if (!order) {
+        return NextResponse.json({ message: 'Order not found' }, { status: 404 })
+      }
+
+      // Check authorization
+      if (session?.user) {
+        const userId = (session.user as any).id
+        const userRole = (session.user as any).role
+        
+        // Allow if user owns the order or is admin
+        if (order.userId !== userId && userRole !== 'ADMIN' && userRole !== 'MANAGER') {
+          return NextResponse.json({ message: 'Forbidden' }, { status: 403 })
+        }
+      }
+
+      return NextResponse.json([order])
+    }
+
+    // Otherwise, fetch user's orders
     if (!session?.user) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
     }
