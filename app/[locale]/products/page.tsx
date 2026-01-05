@@ -3,7 +3,8 @@ import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import { formatPrice } from '@/lib/utils'
 
-export default async function ProductsPage() {
+export default async function ProductsPage({ params }: { params: { locale: string } }) {
+  const locale = params.locale
   const products = await prisma.product.findMany({
     where: {
       isActive: true,
@@ -81,7 +82,7 @@ export default async function ProductsPage() {
               return (
                 <Link
                   key={product.id}
-                  href={`/products/${product.slug}`}
+                  href={`/${locale}/products/${product.slug}`}
                   className="group bg-background-secondary rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all transform hover:scale-105"
                 >
                   <div className="relative aspect-square overflow-hidden">

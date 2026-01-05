@@ -9,9 +9,12 @@ import { forgotPasswordSchema, ForgotPasswordInput } from '@/lib/validations/aut
 import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import Alert from '@/components/ui/Alert'
+import { useParams } from 'next/navigation'
 
 export default function ForgotPasswordPage() {
   const t = useTranslations()
+  const params = useParams()
+  const locale = params?.locale || 'en'
   
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState<string>('')
@@ -46,7 +49,7 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen bg-gradient-to-b from-background to-background-secondary flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-block">
+          <Link href={`/${locale}`} className="inline-block">
             <h1 className="font-serif text-4xl font-bold bg-gradient-to-r from-primary to-primary-300 bg-clip-text text-transparent">
               214 Scents
             </h1>
@@ -81,14 +84,14 @@ export default function ForgotPasswordPage() {
               </Button>
 
               <div className="text-center">
-                <Link href="/auth/signin" className="text-sm text-primary hover:text-primary-400">
+                <Link href={`/${locale}/auth/signin`} className="text-sm text-primary hover:text-primary-400">
                   {t('auth.backToSignIn')}
                 </Link>
               </div>
             </form>
           ) : (
             <div className="text-center">
-              <Link href="/auth/signin">
+              <Link href={`/${locale}/auth/signin`}>
                 <Button className="w-full" size="lg">
                   {t('auth.backToSignIn')}
                 </Button>

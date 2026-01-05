@@ -2,8 +2,9 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import StorefrontLayout from '@/components/storefront/StorefrontLayout';
 
-export default function HomePage() {
+export default function HomePage({ params }: { params: { locale: string } }) {
   const t = useTranslations();
+  const locale = params.locale;
 
   return (
     <StorefrontLayout>
@@ -19,7 +20,7 @@ export default function HomePage() {
             {t('hero.subtitle')}
           </p>
           <Link
-            href="/products"
+            href={`/${locale}/products`}
             className="inline-block bg-primary hover:bg-primary-600 text-background px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 animate-scale-in"
           >
             {t('hero.cta')}
@@ -36,7 +37,7 @@ export default function HomePage() {
           {['Men', 'Women', 'Unisex'].map((category) => (
             <Link
               key={category}
-              href={`/products?category=${category.toLowerCase()}`}
+              href={`/${locale}/products?category=${category.toLowerCase()}`}
               className="group relative h-96 rounded-2xl overflow-hidden hover:shadow-2xl transition-all transform hover:scale-105"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>

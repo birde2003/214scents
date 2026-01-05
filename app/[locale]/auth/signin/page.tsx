@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, useParams } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
@@ -16,7 +16,9 @@ export default function SignInPage() {
   const t = useTranslations()
   const router = useRouter()
   const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get('callbackUrl') || '/account'
+  const params = useParams()
+  const locale = params?.locale || 'en'
+  const callbackUrl = searchParams.get('callbackUrl') || `/${locale}/account`
   
   const [error, setError] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
@@ -57,7 +59,7 @@ export default function SignInPage() {
     <div className="min-h-screen bg-gradient-to-b from-background to-background-secondary flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-block">
+          <Link href={`/${locale}`} className="inline-block">
             <h1 className="font-serif text-4xl font-bold bg-gradient-to-r from-primary to-primary-300 bg-clip-text text-transparent">
               214 Scents
             </h1>
@@ -65,7 +67,7 @@ export default function SignInPage() {
           <h2 className="mt-6 text-3xl font-bold text-white">{t('auth.signIn')}</h2>
           <p className="mt-2 text-gray-400">
             {t('auth.dontHaveAccount')}{' '}
-            <Link href="/auth/signup" className="text-primary hover:text-primary-400">
+            <Link href={`/${locale}/auth/signup`} className="text-primary hover:text-primary-400">
               {t('auth.signUp')}
             </Link>
           </p>
@@ -101,7 +103,7 @@ export default function SignInPage() {
                 />
                 <span className="ml-2 text-sm text-gray-400">{t('auth.rememberMe')}</span>
               </label>
-              <Link href="/auth/forgot-password" className="text-sm text-primary hover:text-primary-400">
+              <Link href={`/${locale}/auth/forgot-password`} className="text-sm text-primary hover:text-primary-400">
                 {t('auth.forgotPassword')}
               </Link>
             </div>
