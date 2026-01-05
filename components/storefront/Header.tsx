@@ -3,18 +3,20 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { usePathname, useParams } from 'next/navigation'
 
 export default function Header() {
   const t = useTranslations('common')
   const pathname = usePathname()
+  const params = useParams()
+  const locale = params?.locale || 'en'
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: t('home'), href: '/' },
-    { name: t('shop'), href: '/products' },
-    { name: t('about'), href: '/about' },
-    { name: t('contact'), href: '/contact' },
+    { name: t('home'), href: `/${locale}` },
+    { name: t('shop'), href: `/${locale}/products` },
+    { name: t('about'), href: `/${locale}/about` },
+    { name: t('contact'), href: `/${locale}/contact` },
   ]
 
   return (
@@ -22,7 +24,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <span className="font-serif text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-primary-300 bg-clip-text text-transparent">
               214 Scents
             </span>
@@ -48,12 +50,12 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
-            <Link href="/wishlist" className="p-2 hover:text-primary transition-colors">
+            <Link href={`/${locale}/wishlist`} className="p-2 hover:text-primary transition-colors">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </Link>
-            <Link href="/cart" className="p-2 hover:text-primary transition-colors relative">
+            <Link href={`/${locale}/cart`} className="p-2 hover:text-primary transition-colors relative">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
@@ -61,7 +63,7 @@ export default function Header() {
                 0
               </span>
             </Link>
-            <Link href="/account" className="p-2 hover:text-primary transition-colors">
+            <Link href={`/${locale}/account`} className="p-2 hover:text-primary transition-colors">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>

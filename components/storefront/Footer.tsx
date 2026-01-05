@@ -2,9 +2,12 @@
 
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const params = useParams()
+  const locale = params?.locale || 'en'
   const currentYear = new Date().getFullYear()
 
   return (
@@ -26,17 +29,17 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">{t('quickLinks')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href={`/${locale}/about`} className="text-gray-400 hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href={`/${locale}/products`} className="text-gray-400 hover:text-primary transition-colors">
                   Shop All
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href={`/${locale}/contact`} className="text-gray-400 hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
@@ -48,22 +51,17 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">{t('customerService')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/account/orders" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href={`/${locale}/account/orders`} className="text-gray-400 hover:text-primary transition-colors">
                   Track Order
                 </Link>
               </li>
               <li>
-                <Link href="/help" className="text-gray-400 hover:text-primary transition-colors">
-                  Help & FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href={`/${locale}/terms`} className="text-gray-400 hover:text-primary transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
