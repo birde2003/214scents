@@ -35,6 +35,7 @@ export default function CartPage() {
       return
     }
     fetchCart()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status])
 
   const fetchCart = async () => {

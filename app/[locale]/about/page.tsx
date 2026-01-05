@@ -33,7 +33,7 @@ export default function AboutPage() {
                   Every scent in our collection tells a story—crafted with the finest ingredients sourced from around the globe. From the lavender fields of Provence to the oud forests of Southeast Asia, we travel the world to discover the most exquisite essences for our fragrances.
                 </p>
                 <p>
-                  At 214 Scents, we believe that a fragrance is more than just a scent—it's an expression of identity, a memory in a bottle, and a work of art that deserves to be experienced and cherished.
+                  At 214 Scents, we believe that a fragrance is more than just a scent—it&apos;s an expression of identity, a memory in a bottle, and a work of art that deserves to be experienced and cherished.
                 </p>
               </div>
             </section>
@@ -92,13 +92,13 @@ export default function AboutPage() {
               <h2 className="font-serif text-3xl font-bold mb-6 text-primary">The 214 Scents Experience</h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  When you choose a fragrance from 214 Scents, you're not just purchasing a perfume—you're investing in a sensory journey. Each bottle is elegantly designed, reflecting the luxury and sophistication within.
+                  When you choose a fragrance from 214 Scents, you&apos;re not just purchasing a perfume—you&apos;re investing in a sensory journey. Each bottle is elegantly designed, reflecting the luxury and sophistication within.
                 </p>
                 <p>
-                  Our collection spans from fresh and vibrant scents perfect for daytime wear to rich, complex compositions ideal for evening occasions. Whether you prefer floral, woody, oriental, or fresh fragrances, our diverse range ensures there's a perfect scent for every mood and moment.
+                  Our collection spans from fresh and vibrant scents perfect for daytime wear to rich, complex compositions ideal for evening occasions. Whether you prefer floral, woody, oriental, or fresh fragrances, our diverse range ensures there&apos;s a perfect scent for every mood and moment.
                 </p>
                 <p>
-                  We invite you to explore our collection and discover the fragrance that speaks to your soul. Let 214 Scents be your signature scent, your olfactory companion in life's most memorable moments.
+                  We invite you to explore our collection and discover the fragrance that speaks to your soul. Let 214 Scents be your signature scent, your olfactory companion in life&apos;s most memorable moments.
                 </p>
               </div>
             </section>

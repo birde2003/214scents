@@ -29,6 +29,7 @@ export default function WishlistPage() {
       return
     }
     fetchWishlist()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status])
 
   const fetchWishlist = async () => {
